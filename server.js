@@ -1,4 +1,5 @@
 const express = require('express')
+app.set('view engine', 'ejs')
 const app = express()
 
 app.get('/', function (req, res) {
