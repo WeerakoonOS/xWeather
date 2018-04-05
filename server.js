@@ -5,7 +5,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs')
 
 
-app.get('/', function (req, res) {
+app.post('/', function (req, res) {
   //res.send('Hello World!')
   res.render('index');
 })
