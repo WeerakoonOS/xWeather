@@ -3,7 +3,8 @@ app.set('view engine', 'ejs')
 const app = express()
 
 app.get('/', function (req, res) {
-  res.send('Hello World!')
+  //res.send('Hello World!')
+  res.render('index');
 })
 
 app.listen(3000, function () {
