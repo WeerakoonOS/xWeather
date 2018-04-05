@@ -10,13 +10,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
-    res.render('index');
+    res.render('index', {weather: null, error: null});
   })
 
 app.post('/', function (req, res) {
-  //res.send('Hello World!')
-  //console.log(req.body.city);
-  //res.render('index');
   let city = req.body.city;
   let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
 
@@ -33,6 +30,9 @@ app.post('/', function (req, res) {
       }
     }
   });
+  //res.send('Hello World!')
+  //console.log(req.body.city);
+  //res.render('index');
 })
 
 app.listen(3000, function () {
