@@ -13,12 +13,16 @@ app.get('/', function (req, res) {
     res.render('index', {weather: null, error: null});
   })
 
-app.get('/air', function (req, res) {
-   res.render('air', {weather: null, error: null});
+app.get('/index', function (req, res) {
+   res.render('index', {weather: null, error: null});
 })
 
 app.get('/uv', function (req, res) {
-   res.render('uv', {weather: null, error: null});
+  res.render('uv', {weather: null, error: null});
+})
+
+app.get('/air', function (req, res) {
+   res.render('air', {weather: null, error: null});
 })
 
 app.get('/about', function (req, res) {
