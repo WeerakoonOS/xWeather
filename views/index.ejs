@@ -2,9 +2,11 @@
 <html>
   <head>
     <!-- header partial -->
+    <% include partials/head %>
   </head>
   <body>
       <!-- navbar partial -->
+      <% include  partials/header %>
     <div class="container">
       <fieldset>
         <form action="/" method="post">
@@ -19,7 +21,10 @@
             <p><%= error %></p>
             <% } %>
       </fieldset>
+        <!-- footer partial -->
+      <footer>
+          <% include partials/footer %>
+      </footer>
     </div>
-    <!-- footer partial -->
   </body>
 </html>
