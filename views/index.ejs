@@ -1,37 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Test</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <!-- header partial -->
   </head>
   <body>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="#">x-Weather</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="index.ejs">Temperature</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="uv.ejs">UV Intensity</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="air.ejs">Air Pollution</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.ejs">About</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+      <!-- navbar partial -->
     <div class="container">
       <fieldset>
         <form action="/" method="post">
@@ -46,32 +19,7 @@
             <p><%= error %></p>
             <% } %>
       </fieldset>
-     <!--  <fieldset>
-        <form action="/" method="post">
-          <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
-          <input type="submit" class="ghost-button" value="Get UV Intensity">
-        </form>
-            <% if(weather !== null){ %>
-            <p><%= weather %></p>
-            <% } %>
-
-            <% if(error !== null){ %>
-            <p><%= error %></p>
-            <% } %>
-      </fieldset>
-      <fieldset>
-        <form action="/" method="post">
-          <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
-          <input type="submit" class="ghost-button" value="Get Air Pollution State(CO)">
-        </form>
-            <% if(weather !== null){ %>
-            <p><%= weather %></p>
-            <% } %>
-
-            <% if(error !== null){ %>
-            <p><%= error %></p>
-            <% } %>
-      </fieldset> -->
     </div>
+    <!-- footer partial -->
   </body>
 </html>
