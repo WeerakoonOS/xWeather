@@ -9,9 +9,25 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
-app.get('/', function (req, res) {
+/* app.get('/', function (req, res) {
     res.render('air', {weather: null, error: null});
-  })
+  }) */
+
+app.get('/', function (req, res) {
+  res.render('air', {weather: null, error: null});
+})
+
+app.get('/air', function (req, res) {
+   res.render('air', {weather: null, error: null});
+})
+
+app.get('/uv', function (req, res) {
+   res.render('uv', {weather: null, error: null});
+})
+
+app.get('/about', function (req, res) {
+  res.render('about', {weather: null, error: null});
+})
 
 app.post('/', function (req, res) {
   let city = req.body.city;
