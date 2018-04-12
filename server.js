@@ -13,6 +13,18 @@ app.get('/', function (req, res) {
     res.render('index', {weather: null, error: null});
   })
 
+app.get('/air', function (req, res) {
+   res.render('air', {weather: null, error: null});
+})
+
+app.get('/uv', function (req, res) {
+   res.render('uv', {weather: null, error: null});
+})
+
+app.get('/about', function (req, res) {
+  res.render('about', {weather: null, error: null});
+})
+
 app.post('/', function (req, res) {
   let city = req.body.city;
   let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
