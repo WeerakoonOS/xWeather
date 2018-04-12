@@ -74,3 +74,10 @@ body {
     color: rgb(231, 80, 29);
     font-size: 22px;
   }
+
+  footer {
+    padding-top: 30px;
+    padding-left: 625px;
+    padding-bottom: 30px;
+    color: rgb(27, 15, 0);
+  }
