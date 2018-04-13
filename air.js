@@ -3,15 +3,11 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const app = express()
 
-const apiKey = 'eb59071d486d6c9ef2159f4c067b5fee';
+const apiKey = 'cfa85d46b58aa9429bd1e6a1efdff5ce';
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
-
-/* app.get('/', function (req, res) {
-    res.render('air', {weather: null, error: null});
-  }) */
 
 // defining the page routes
 app.get('/', function (req, res) {
@@ -27,11 +23,11 @@ app.get('/index', function (req, res) {
 })
 
 app.get('/air', function (req, res) {
-res.render('uv', {weather: null, error: null});
+res.render('air', {weather: null, error: null});
 })
 
 app.get('/uv', function (req, res) {
- res.render('air', {weather: null, error: null});
+ res.render('uv', {weather: null, error: null});
 })
 
 app.get('/contact', function (req, res) {
@@ -45,11 +41,11 @@ app.post('/', function (req, res) {
 
   request(url, function (err, response, body) {
     if(err){
-      res.render('air', {weather: null, error: 'Error, please try again'});
+      res.render('air', {weather: null, error: 'Error, please try again!!'});
     } else {
       let weather = JSON.parse(body)
       if(weather.main == undefined){// user invalid input
-        res.render('air', {weather: null, error: 'Error, please try again'});
+        res.render('air', {weather: null, error: 'Error, please try again!'});
       } else {
         let weatherText = `It's ${weather.main.temp} Celcius in ${weather.name}!`;
         res.render('air', {weather: weatherText, error: null});
