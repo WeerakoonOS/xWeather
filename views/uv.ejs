@@ -12,7 +12,8 @@
     <div class="container">
       <fieldset>
         <form action="/" method="post">
-          <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
+          <input name="lat" type="text" class="ghost-input" placeholder="Enter Latitude" required>
+          <input name="lon" type="text" class="ghost-input" placeholder="Enter Longitude" required>
           <input type="submit" class="ghost-button" value="Get Current UV Intensity">
         </form>
             <% if(weather !== null){ %>
