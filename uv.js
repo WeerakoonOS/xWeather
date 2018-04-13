@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const app = express()
 
-const apiKey = 'eb59071d486d6c9ef2159f4c067b5fee';
+const apiKey = 'cfa85d46b58aa9429bd1e6a1efdff5ce';
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -11,43 +11,44 @@ app.set('view engine', 'ejs')
 
 // defining the page routes
 app.get('/', function (req, res) {
-  res.render('index', {weather: null, error: null});
+  res.render('index', {uv: null, error: null});
 })
 
 app.get('/about', function (req, res) {
-res.render('about', {weather: null, error: null});
+res.render('about', {uv: null, error: null});
 })
 
 app.get('/index', function (req, res) {
- res.render('index', {weather: null, error: null});
+ res.render('index', {uv: null, error: null});
 })
 
 app.get('/air', function (req, res) {
-res.render('uv', {weather: null, error: null});
+res.render('air', {uv: null, error: null});
 })
 
 app.get('/uv', function (req, res) {
- res.render('air', {weather: null, error: null});
+ res.render('uv', {uv: null, error: null});
 })
 
 app.get('/contact', function (req, res) {
-res.render('contact', {weather: null, error: null});
+res.render('contact', {uv: null, error: null});
 })
 
 app.post('/', function (req, res) {
-  let city = req.body.city;
-  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
+  let lat = req.body.lat;
+  let lon = req.body.lon;
+  let url = `http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`
 
   request(url, function (err, response, body) {
     if(err){
-      res.render('index', {weather: null, error: 'Error, please try again'});
+      res.render('uv', {uv: null, error: 'Error, please try again!'});
     } else {
-      let weather = JSON.parse(body)
-      if(weather.main == undefined){// user invalid input
-        res.render('index', {weather: null, error: 'Error, please try again'});
+      let uv = JSON.parse(body)
+      if(uv.main == undefined){// user invalid input
+        res.render('uv', {uv: null, error: 'Error, please try again!!'});
       } else {
-        let weatherText = `It's ${weather.main.temp} Celcius in ${weather.name}!`;
-        res.render('index', {weather: weatherText, error: null});
+        let uvText = `Ultraviolet Index is ${uv.value} in ${uv.lat} & ${uv.lon}!`;
+        res.render('uv', {uv: uvText, error: null});
       }
     }
   });
