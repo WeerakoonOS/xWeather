@@ -5,8 +5,10 @@
     <% include partials/head %>
   </head>
   <body>
+    <div class="topnav" id="myTopnav">
       <!-- navbar partial -->
       <% include  partials/header %>
+    </div>
     <div class="container">
       <fieldset>
         <form action="/" method="post">
@@ -21,12 +23,10 @@
             <p><%= error %></p>
             <% } %>
       </fieldset>
-        <!-- footer partial -->
-    </div>
-    <div>
+    </div>   
+      <!-- footer partial -->
       <footer>
           <% include partials/footer %>
       </footer>
-    </div>
   </body>
 </html>
