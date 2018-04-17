@@ -34,7 +34,7 @@ app.get('/contact', function (req, res) {
   res.render('contact', {weather: null, error: null});
 })
 
-app.post('/uv', function (req, res) {
+app.post('/', function (req, res) {
   let city = req.body.city;
   let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
 
